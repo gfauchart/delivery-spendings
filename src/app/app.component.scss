@@ -33,7 +33,7 @@ $width: 700px;
             border: 1px solid black;
 
             &.on {
-              background: url('/assets/checkmark-50.png');
+              background: url('../assets/checkmark-50.png');
               background-size: 13px 13px;
               background-repeat: no-repeat;
               background-position: center;
@@ -98,13 +98,13 @@ footer {
       cursor: pointer;
 
       &.github {
-          background: url('/assets/github.svg');
+          background: url('../assets/github.svg');
           background-size: 100% 100%;
           background-repeat: no-repeat;
           background-position: center;
       }
       &.twitter {
-          background: url('/assets/twitter.svg');
+          background: url('../assets/twitter.svg');
           background-size: 100% 100%;
           background-repeat: no-repeat;
           background-position: center;
