@@ -24,6 +24,14 @@ export const providers = [
     }
   },
   {
+    tag: 'UberEATS',
+    from: 'uber.uk@uber.com',
+    subjects: ['order with Uber EATS'],
+    price : {
+      getter : (str) => parseFloat(str.match(/\s£([0-9.]+)\s/)[1])
+    }
+  },
+  {
     tag: 'JustEat',
     from: 'noreplyuk@just-eat.info',
     subjects: ['Your order\'s in the bag'],
