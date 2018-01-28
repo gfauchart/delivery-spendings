@@ -1,0 +1,115 @@
+$width: 700px;
+
+.container {
+  max-width: $width;
+  margin: 0 auto;
+
+  .header {
+
+    h1 {
+      text-decoration: underline;
+    }
+
+    width: 100%;
+    margin-bottom: 15px;
+
+    .filters {
+      display: flex;
+      justify-content: space-between;
+      margin: 25px 0;
+
+      .providers {
+        .provider {
+          font-size: 15px;
+          display: flex;
+
+          span {
+            margin-left: 5px;
+          }
+
+          .checkbox {
+            width: 15px;
+            height: 15px;
+            border: 1px solid black;
+
+            &.on {
+              background: url('/assets/checkmark-50.png');
+              background-size: 13px 13px;
+              background-repeat: no-repeat;
+              background-position: center;
+            }
+          }
+        }
+      }
+
+
+      .range {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-self: center;
+
+        p {
+          margin: 0;
+        }
+      }
+
+      .buttons {
+        display: flex;
+        align-self: center;
+
+        button {
+          margin: 3px;
+        }
+      }
+    }
+
+
+  }
+}
+
+.main {
+  position: relative;
+  min-height: 70vh;
+  margin-bottom: 10px;
+
+  .spinner {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    margin: auto;
+  }
+}
+
+footer {
+  width: 100%;
+  border-top: 1px solid grey;
+
+  .socials {
+    width: $width;
+    margin: 0 auto;
+
+    .social {
+      display: inline-block;
+      width: 40px;
+      height: 40px;
+      cursor: pointer;
+
+      &.github {
+          background: url('/assets/github.svg');
+          background-size: 100% 100%;
+          background-repeat: no-repeat;
+          background-position: center;
+      }
+      &.twitter {
+          background: url('/assets/twitter.svg');
+          background-size: 100% 100%;
+          background-repeat: no-repeat;
+          background-position: center;
+      }
+    }
+  }
+
+}

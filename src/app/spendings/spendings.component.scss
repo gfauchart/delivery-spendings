@@ -1,0 +1,11 @@
+
+.component-line {
+  display: flex;
+
+  pie-component,
+  bar-component {
+    width: 49%;
+    display: inline-block;
+    margin: 0;
+  }
+}

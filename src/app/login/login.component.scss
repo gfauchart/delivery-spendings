@@ -1,0 +1,28 @@
+.login-container {
+  display: flex;
+
+  .login{
+    width: 50%;
+    padding: 0 20px;
+
+    .box {
+      border: 1px solid grey;
+      text-align: center;
+      padding: 5px;
+      border-radius: 5px;
+      box-shadow: 2px 2px rgba(88, 88, 88, 0.5);
+      margin-top: 10px;
+
+      ul {
+        text-align: left;
+      }
+    }
+  }
+  .images {
+    width: 50%;
+    img {
+      width: 90%;
+      height: auto;
+    }
+  }
+}
