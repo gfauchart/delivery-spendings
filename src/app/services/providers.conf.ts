@@ -47,4 +47,12 @@ export const providers = [
       getter : (str) => (str.match(/Total:[^£]*£([0-9.]+)/))
     }
   },
+  {
+    tag: 'JustEat',
+    from: 'justeat@order.just-eat.co.uk',
+    subjects: ['Your order from'],
+    price : {
+      getter : (str) => (str.match(/Total:[^£]*£([0-9.]+)/))
+    }
+  },
 ]
