@@ -8,6 +8,14 @@ export const providers = [
     }
   },
   {
+    tag: 'Deliveroo',
+    from: 'info@deliveroo.co.uk',
+    subjects: ['has accepted your order'],
+    price :  {
+      getter : (str) => (str.match(/Total\s+£([0-9.]+)/))
+    }
+  },
+  {
     tag: 'PapaJohns',
     from: 'info@papajohns.co.uk',
     subjects: ['Papa John', 'Your order', 'is confirmed'],
