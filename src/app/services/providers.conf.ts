@@ -4,7 +4,7 @@ export const providers = [
     from: 'info@deliveroo.co.uk',
     subjects: ['Your order from', 'has been accepted'],
     price :  {
-      getter : (str) => parseFloat(str.match(/Total\s+£([0-9.]+)/)[1])
+      getter : (str) => (str.match(/Total\s+£([0-9.]+)/))
     }
   },
   {
@@ -12,7 +12,7 @@ export const providers = [
     from: 'info@papajohns.co.uk',
     subjects: ['Papa John', 'Your order', 'is confirmed'],
     price : {
-      getter : (str) => parseFloat(str.match(/TOTAL\s+£([0-9.]+)/)[1])
+      getter : (str) => (str.match(/TOTAL\s+£([0-9.]+)/))
     }
   },
   {
@@ -20,7 +20,7 @@ export const providers = [
     from: 'uber.uk@uber.com',
     subjects: ['order with UberEATS'],
     price : {
-      getter : (str) => parseFloat(str.match(/\s£([0-9.]+)\s/)[1])
+      getter : (str) => (str.match(/\s£([0-9.]+)\s/))
     }
   },
   {
@@ -28,7 +28,7 @@ export const providers = [
     from: 'uber.uk@uber.com',
     subjects: ['order with Uber EATS'],
     price : {
-      getter : (str) => parseFloat(str.match(/\s£([0-9.]+)\s/)[1])
+      getter : (str) => (str.match(/\s£([0-9.]+)\s/))
     }
   },
   {
@@ -36,7 +36,15 @@ export const providers = [
     from: 'noreplyuk@just-eat.info',
     subjects: ['Your order\'s in the bag'],
     price : {
-      getter : (str) => parseFloat(str.match(/Total:[^£]*£([0-9.]+)/)[1])
+      getter : (str) => (str.match(/Total:[^£]*£([0-9.]+)/))
+    }
+  },
+  {
+    tag: 'JustEat',
+    from: 'justeat@order.just-eat.co.uk',
+    subjects: ['Your order', 'is in the bag'],
+    price : {
+      getter : (str) => (str.match(/Total:[^£]*£([0-9.]+)/))
     }
   },
 ]
