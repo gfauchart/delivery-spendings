@@ -76,6 +76,11 @@ export class GmailService {
             var from = mail.payload.headers.find(h => h.name == "From").value;
 
             var provider =  providers.find(p => from.indexOf(p.from) >= 0);
+
+            if (!provider) {
+              console.log('provider not found for email:' + from);
+              continue;
+            }
             let orderPrice = 0;
 
             let priceMatch = provider.price.getter(Utils.b64DecodeUnicode(email));
