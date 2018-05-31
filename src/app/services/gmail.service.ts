@@ -68,7 +68,19 @@ export class GmailService {
           for (let i in results.result) {
             let mail = results.result[i].result;
             if (mail.payload.parts) {
-              var email = mail.payload.parts.find(p => p.mimeType = "text/plain").body.data;
+              var parts = mail.payload.parts.find(p => p.mimeType = "text/plain");
+
+              if (parts.body.size == 0) {
+                var email = parts.parts.find(p => p.mimeType = "text/plain").body.data;
+              } else {
+                var email = parts.body.data;
+              }
+
+              if (!email) {
+                console.log('email body not found');
+                continue;
+                //var email = mail.payload.parts.parts.find(p => p.mimeType = "text/plain").body.data;
+              }
             } else {
               var email = mail.payload.body.data;
             }
@@ -81,12 +93,7 @@ export class GmailService {
               console.log('provider not found for email:' + from);
               continue;
             }
-            let orderPrice = 0;
-
-            let priceMatch = provider.price.getter(Utils.b64DecodeUnicode(email));
-            if (priceMatch && priceMatch[1]) {
-              orderPrice = parseFloat(priceMatch[1]);
-            }
+            let orderPrice = provider.price.getter(Utils.b64DecodeUnicode(email));
 
             ORDERS.push({
               tag : provider.tag,

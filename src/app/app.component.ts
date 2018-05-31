@@ -9,8 +9,7 @@ import { providers } from './services/providers.conf'
   styleUrls: ['./app.component.scss', './spinner.sass']
 })
 export class AppComponent {
-  title = 'app';
-  providers= [];
+  providers = [];
   startMonth = 32;
   isSignedIn = false;
   loadingEnable = false;
