@@ -6,7 +6,8 @@
     "module": "es2015",
     "types": [
       "gapi",
-      "gapi.auth2"
+      "gapi.auth2",
+      "node"
     ]
   },
   "exclude": [
