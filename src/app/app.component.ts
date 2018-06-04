@@ -1,6 +1,6 @@
 import { Component, NgZone } from '@angular/core';
 import { Router, NavigationStart, NavigationEnd, NavigationCancel, ActivatedRoute }  from '@angular/router';
-import { providers } from './services/providers.conf'
+import { providers, Provider } from './services/providers.conf'
 
 
 @Component({
@@ -9,7 +9,8 @@ import { providers } from './services/providers.conf'
   styleUrls: ['./app.component.scss', './spinner.sass']
 })
 export class AppComponent {
-  providers = [];
+  providers = {};
+  providersList = [];
   startMonth = 32;
   isSignedIn = false;
   loadingEnable = false;
@@ -28,14 +29,25 @@ export class AppComponent {
       }
     });
 
-    let nonUniqueProviders = providers.map(p=>p.tag);
-    this.providers = Array.from(new Set(nonUniqueProviders)).map(name => {
-      return {
-        name: name,
-        on : true
-      }
-    })
+    let uniqueMap = {}
+    for (let i = 0; i < providers.length; i++) {
+        let provider : Provider = providers[i];
+        this.providers [provider.type] = this.providers [provider.type] || [];
+        if (!uniqueMap[provider.tag]) {
+          let providerUi = {
+            name: provider.tag,
+            on : true
+          };
+          this.providers[provider.type].push(providerUi);
+          this.providersList.push(providerUi);
+        }
+        uniqueMap[provider.tag] = true;
+    }
 
+  }
+
+  getProvidersArray() : Array<string> {
+    return Object.keys(this.providers);
   }
 
   ngOnInit() {
@@ -60,7 +72,7 @@ export class AppComponent {
   }
 
   filter() {
-    let names = this.providers.filter(p => p.on).map(p => p.name);
+    let names = this.providersList.filter(p => p.on).map(p => p.name);
     this.router.navigate(['/'],  {
       queryParams:
         {

@@ -2,8 +2,7 @@ const cheerio = require('cheerio')
 
 export enum ProviderType {
   FOOD = 'food',
-  SHOPPING = 'shopping',
-  FLIGHTS = 'flight'
+  SHOPPING = 'shopping'
 }
 
 export interface Provider {
