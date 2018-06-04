@@ -93,7 +93,7 @@ export class GmailService {
               console.log('provider not found for email:' + from);
               continue;
             }
-            let orderPrice = provider.price.getter(Utils.b64DecodeUnicode(email));
+            let orderPrice = provider.priceGetter(Utils.b64DecodeUnicode(email));
 
             ORDERS.push({
               tag : provider.tag,
