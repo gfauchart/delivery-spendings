@@ -2,9 +2,9 @@
 
 ### How it works
 
-I use Gmail API to knows when and how much you spent on Delivery
-* Only the emails received from the delivery platform are requested
-* This is a static website only, your emails are only downloaded in your browser
+This website use Gmail API to know when and how much you spent on Delivery
+* Only emails received from these delivery platforms are requested
+* This is a static website, your emails are only downloaded in your browser
 
 ### Try it
 
