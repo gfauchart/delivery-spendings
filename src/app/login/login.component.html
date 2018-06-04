@@ -1,10 +1,9 @@
-
 <div class='login-container'>
   <div class='login'>
     <div class='box'>
-      <p>This website uses Gmail API to knows when and how much you spent on Delivery</p>
+      <p>I use Gmail API to knows when and how much you spent on Delivery</p>
       <ul>
-        <li>Only the emails reiceved from the delivery platform are requested</li>
+        <li>Only the emails received from the delivery platform are requested</li>
         <li>This is a static website only, your emails are only downloaded in your browser</li>
       </ul>
       <button (click)='login()' class="button">
@@ -13,6 +12,9 @@
         </span>
         <span class="text">Sign in with Google</span>
       </button>
+      <div class="providerImages">
+        <img *ngFor='let image of providerImages' width='60' [src]="image" alt="">
+      </div>
     </div>
   </div>
 

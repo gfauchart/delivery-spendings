@@ -10,7 +10,7 @@
         </div>
       </div>
 
-      <div class='filters'>
+      <div class='filters' *ngIf='isSignedIn'>
 
         <div class='providers' *ngFor='let providerName of getProvidersArray()'>
           <b>{{providerName}}</b>
