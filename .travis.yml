@@ -1,10 +1,16 @@
 language: node_js
 node_js:
-  - "8"
-
+- '8'
 branches:
   only:
-    - master
-
+  - master
 script:
-  - npm run build-prod
+- npm run build-prod
+deploy:
+  provider: s3
+  access_key_id:
+    secure: klcX0Mo8+vHq76MXB4DMok+l5MCa2NtXNnuH22/oy/D4leSCLhn2UD0eeKRPkw3DXQ8x22SjZ6JAI+Q9QxMwMpUwGAe3eawDo9n986Mn3PKeAVC48aclyghDPjX5ubcegWFx1kAoSORCey7tFh8gGLB1jnlTtQLuBPoo7uOEEhYDwI5iphJEnASGScR/yqGOikiXMD1yESPrZhIQuKO6c6JUWNtKRr03+HtcYg+4xrdVQECoDX4w1N8L5g2EZjObE8awRlMH8FxrjB1jMEs2GMvU/Nm07oncR2BVWs4t6bcLrG7uqXj9Unga79VRVOUZ4kd7WHr7RRtRxQ3s40ryfrdKFL2ryF0QztvByb/eCc+1v679qoCQjLhT3o8+XFQ6rAMmi97aVCUX5x55TvDGiyuF532kspWyTHzaLwC8MSMDJJNdykgZIpm1zLm7QU6cVd020e/cetIIWbpWdQm5ZAomWWxcMnwf8iXXVRgdEaUoHP7YMP4FWbBPT02xou4gwOKIoH5b7B3ACgRzcBwZ+BbINGFKMYUq7ngzCfhhztBoNAifzgFbMZd8VEppipvE2CJMV4iUCE2XcqApVvTXkKkWP7IeVE8pngKa6E2BKGTfE4owDmdJNXFNAiMdQ4jOpN3wMHfA+v7ZcU5gWe0cM4vVheAVBnlCRMuM4QpASzA=
+  secret_access_key:
+    secure: GIZAAolqAsOfaguhaktRi3S3hXYAD6P8Nj7hX9iTjPj62Vxtva+BgFdXiIxk5zgmQeFVTWChfLzyri6OARHdftyK8UgV2B4g5hK1/jLVIM1IwvbxT+tlTlrCidLRzTZvsXu9AZm40SeEI6v2tkfmL18k7+u4Vi/CsGSSaFgRMQ1PcOeynM+/Vflx/ASi7ZiBNUxVTUik8gbZEB/5Ig6ZB+mkUlsUPRro3MeT418bd3Y140SF7HU3WqtvXk1UbCHXAYce5tM06YZ5DcEfwMpJNJCQawU2DhmZduxJyqGcAz7W9kvUgYlaI/Rw8EPbqC9aG0Wi8EmKnfw1nsa+4na8DbM18hmiRg7N3b2xsLQfhyexfviza93cejit07RneZkSMxCaxHLcl4X7ADpdBlX2j5uW/LS6pD4LzkZ7azo1lUy/ofjNMOxc+X50Y/6Ius+/pmR+cnX0PUvn/D28SC2b9Zg8Y6XBVu0k5mumQ6pDK42LvvOOYGTRHgUEBASQHigFulnDPtckS1HXXZrioblWZCJCqgADYO1zro454Xt82SJQV///LDF7TZDCNaSN9+EFyvEHmktOqoLhL26kV/Lih9LPHdaYfsWFabNJEV+AxPI2O1N3894F06PiWARu4hBtNLoPF4sZBdEa/OjpbZ5RjlKqXHlZ32Sqe3SkrACuplk=
+  bucket: delivery-spendings.avnlab.com
+  skip_cleanup: true
