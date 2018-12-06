@@ -15,3 +15,4 @@ deploy:
   bucket: delivery-spendings.avnlab.com
   acl: public_read
   local_dir: dist
+  skip_cleanup: true
