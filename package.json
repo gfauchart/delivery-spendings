@@ -24,7 +24,7 @@
     "@angular/router": "^5.0.0",
     "@types/gapi": "0.0.35",
     "@types/gapi.auth2": "0.0.46",
-    "chart.js": "^2.7.1",
+    "chart.js": "^2.9.4",
     "cheerio": "^1.0.0-rc.2",
     "core-js": "^2.4.1",
     "moment": "^2.20.1",
